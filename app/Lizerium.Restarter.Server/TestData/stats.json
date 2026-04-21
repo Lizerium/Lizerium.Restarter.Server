@@ -1,0 +1,19 @@
+{
+	"serverload": "6",
+	"players": [
+		{
+			"name": "NubotiV",
+			"rank": "142",
+			"group": "0",
+			"ship": "Тестовый корабль 1",
+			"system": "Система 1"
+		},
+		{
+			"name": "Lizerium",
+			"rank": "1",
+			"group": "0",
+			"ship": "Test ship 1",
+			"system": "Test system 1"
+		}
+	]
+}
