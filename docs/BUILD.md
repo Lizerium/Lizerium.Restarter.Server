@@ -12,7 +12,7 @@
 
 # Build
 
-```bash id="u4j0n2"
+```bash
 dotnet restore
 dotnet build -c Release
 ```
@@ -23,7 +23,7 @@ dotnet build -c Release
 
 - Create `appsettings.json` inside [app/Lizerium.Restarter.Server](app/Lizerium.Restarter.Server)
 
-```json id="yl0b2v"
+```json
 {
 	"StatsFilePath": "full_path_to_stats.json",
 	"ServerExecutablePath": "full_path_to_flserver.exe",
@@ -43,7 +43,7 @@ dotnet build -c Release
 
 Example:
 
-```text id="ntwuv8"
+```text
 C:\Freelancer\EXE\stats.json
 ```
 
@@ -59,7 +59,7 @@ Example test file:
 
 Example:
 
-```text id="a0v4t4"
+```text
 C:\Freelancer\EXE\flserver.exe
 ```
 
@@ -69,7 +69,7 @@ C:\Freelancer\EXE\flserver.exe
 
 Example:
 
-```json id="a8c2z4"
+```json
 360
 ```
 
@@ -79,7 +79,7 @@ Example:
 
 Example:
 
-```json id="l7nyz8"
+```json
 1
 ```
 
@@ -89,13 +89,13 @@ Example:
 
 Used in request header:
 
-```text id="yzqf7x"
+```text
 X-Api-Key
 ```
 
 Example:
 
-```text id="x8x6m1"
+```text
 342adzscaw
 ```
 
@@ -105,7 +105,7 @@ Example:
 
 Example:
 
-```json id="a2j6rx"
+```json
 52349
 ```
 
@@ -115,7 +115,7 @@ Example:
 
 Supported values:
 
-```text id="q5mgnt"
+```text
 En
 Ru
 ```
@@ -135,7 +135,7 @@ This is required for correct Cyrillic text rendering in ship names, systems, and
 
 After configuration:
 
-```bash id="ud4zpn"
+```bash
 Lizerium.Restarter.Server.exe
 ```
 

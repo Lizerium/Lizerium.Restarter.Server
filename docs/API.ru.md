@@ -20,13 +20,13 @@ HTTP API для ботов, систем мониторинга, веб-пане
 
 Локально:
 
-```text id="a1q0ks"
+```text
 http://127.0.0.1:52349
 ```
 
 Публичный доступ (пример):
 
-```text id="n7vxh2"
+```text
 https://users.lizup.ru
 ```
 
@@ -36,19 +36,19 @@ https://users.lizup.ru
 
 Все защищённые запросы требуют заголовок:
 
-```text id="f6n3zo"
+```text
 X-Api-Key: YOUR_SECRET_KEY
 ```
 
 Настраивается в:
 
-```text id="v1xw7e"
+```text
 appsettings.json
 ```
 
 Пример:
 
-```json id="j2mc0n"
+```json
 {
 	"ApiSecretKey": "my_super_secret_key"
 }
@@ -60,7 +60,7 @@ appsettings.json
 
 Ответы используют:
 
-```text id="ptn1xv"
+```text
 application/json; charset=utf-8
 ```
 
@@ -76,7 +76,7 @@ application/json; charset=utf-8
 
 ## Запрос
 
-```http id="m3a8vb"
+```http
 GET /users HTTP/1.1
 Host: users.lizup.ru
 X-Api-Key: YOUR_SECRET_KEY
@@ -86,7 +86,7 @@ X-Api-Key: YOUR_SECRET_KEY
 
 ## Успешный ответ
 
-```json id="w9z2tp"
+```json
 {
 	"serverload": "6",
 	"players": [
@@ -112,7 +112,7 @@ X-Api-Key: YOUR_SECRET_KEY
 
 ## Пустой сервер
 
-```json id="r4v0zt"
+```json
 {
 	"serverload": "0",
 	"players": []
@@ -125,13 +125,13 @@ X-Api-Key: YOUR_SECRET_KEY
 
 Статус:
 
-```text id="s6d1xq"
+```text
 401 Unauthorized
 ```
 
 Тело ответа:
 
-```json id="m8n0yw"
+```json
 {
 	"error": "Unauthorized"
 }
@@ -143,13 +143,13 @@ X-Api-Key: YOUR_SECRET_KEY
 
 Статус:
 
-```text id="f2j9ac"
+```text
 500 Internal Server Error
 ```
 
 Тело ответа:
 
-```json id="d7m1ke"
+```json
 {
 	"error": "Failed reading stats file"
 }
@@ -163,7 +163,7 @@ X-Api-Key: YOUR_SECRET_KEY
 
 # curl
 
-```bash id="z5v2ou"
+```bash
 curl -H "X-Api-Key: YOUR_SECRET_KEY" ^
 https://users.lizup.ru/users
 ```
@@ -172,7 +172,7 @@ https://users.lizup.ru/users
 
 # PowerShell
 
-```powershell id="h4n2ze"
+```powershell
 Invoke-RestMethod `
 -Uri "https://users.lizup.ru/users" `
 -Headers @{ "X-Api-Key" = "YOUR_SECRET_KEY" }
@@ -182,7 +182,7 @@ Invoke-RestMethod `
 
 # C#
 
-```csharp id="x9c7fr"
+```csharp
 using var client = new HttpClient();
 
 client.DefaultRequestHeaders.Add(
@@ -198,7 +198,7 @@ string json =
 
 # JavaScript
 
-```javascript id="p1r7ta"
+```javascript
 const res = await fetch('https://users.lizup.ru/users', {
 	headers: {
 		'X-Api-Key': 'YOUR_SECRET_KEY',
@@ -237,7 +237,7 @@ const data = await res.json()
 
 Рекомендуемый интервал опроса:
 
-```text id="g8t1yr"
+```text
 5-30 секунд
 ```
 
@@ -259,7 +259,7 @@ const data = await res.json()
 
 Возможные будущие маршруты:
 
-```text id="u5m8ze"
+```text
 /status
 /restart
 /start

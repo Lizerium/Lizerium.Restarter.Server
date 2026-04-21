@@ -20,13 +20,13 @@ HTTP API for bots, monitoring systems, dashboards, and remote integrations.
 
 Local:
 
-```text id="lxn6r8"
+```text
 http://127.0.0.1:52349
 ```
 
 Public (example):
 
-```text id="5j1h6r"
+```text
 https://users.lizup.ru
 ```
 
@@ -36,19 +36,19 @@ https://users.lizup.ru
 
 All protected endpoints require header:
 
-```text id="s6h0v4"
+```text
 X-Api-Key: YOUR_SECRET_KEY
 ```
 
 Configure in:
 
-```text id="4tuh8f"
+```text
 appsettings.json
 ```
 
 Example:
 
-```json id="8u8x0x"
+```json
 {
 	"ApiSecretKey": "my_super_secret_key"
 }
@@ -60,7 +60,7 @@ Example:
 
 Responses use:
 
-```text id="32yxmo"
+```text
 application/json; charset=utf-8
 ```
 
@@ -76,7 +76,7 @@ Returns current server statistics and active players.
 
 ## Request
 
-```http id="p2m0gs"
+```http
 GET /users HTTP/1.1
 Host: users.lizup.ru
 X-Api-Key: YOUR_SECRET_KEY
@@ -86,7 +86,7 @@ X-Api-Key: YOUR_SECRET_KEY
 
 ## Success Response
 
-```json id="6l5c6k"
+```json
 {
 	"serverload": "6",
 	"players": [
@@ -112,7 +112,7 @@ X-Api-Key: YOUR_SECRET_KEY
 
 ## Empty Server Example
 
-```json id="p7e6q0"
+```json
 {
 	"serverload": "0",
 	"players": []
@@ -125,13 +125,13 @@ X-Api-Key: YOUR_SECRET_KEY
 
 Status:
 
-```text id="dzhc9j"
+```text
 401 Unauthorized
 ```
 
 Body:
 
-```json id="5q2o5z"
+```json
 {
 	"error": "Unauthorized"
 }
@@ -143,13 +143,13 @@ Body:
 
 Status:
 
-```text id="kzz9bz"
+```text
 500 Internal Server Error
 ```
 
 Body:
 
-```json id="4g7r1n"
+```json
 {
 	"error": "Failed reading stats file"
 }
@@ -163,7 +163,7 @@ Body:
 
 # curl
 
-```bash id="ygk7x0"
+```bash
 curl -H "X-Api-Key: YOUR_SECRET_KEY" ^
 https://users.lizup.ru/users
 ```
@@ -172,7 +172,7 @@ https://users.lizup.ru/users
 
 # PowerShell
 
-```powershell id="xymd53"
+```powershell
 Invoke-RestMethod `
 -Uri "https://users.lizup.ru/users" `
 -Headers @{ "X-Api-Key" = "YOUR_SECRET_KEY" }
@@ -182,7 +182,7 @@ Invoke-RestMethod `
 
 # C#
 
-```csharp id="slw5xg"
+```csharp
 using var client = new HttpClient();
 
 client.DefaultRequestHeaders.Add(
@@ -198,7 +198,7 @@ string json =
 
 # JavaScript
 
-```javascript id="r3fdyv"
+```javascript
 const res = await fetch('https://users.lizup.ru/users', {
 	headers: {
 		'X-Api-Key': 'YOUR_SECRET_KEY',
@@ -237,7 +237,7 @@ const data = await res.json()
 
 Recommended polling interval:
 
-```text id="g2r2p5"
+```text
 5-30 seconds
 ```
 
@@ -259,7 +259,7 @@ Avoid excessive requests.
 
 Future optional endpoints:
 
-```text id="qz0jpd"
+```text
 /status
 /restart
 /start

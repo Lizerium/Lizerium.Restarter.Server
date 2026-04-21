@@ -18,7 +18,7 @@
 
 # Архитектура
 
-```text id="v7k2ra"
+```text
 Интернет
    ↓
 https://users.lizup.ru
@@ -47,7 +47,7 @@ Lizerium.Restarter.Server
 
 Создайте запись типа A:
 
-```text id="o1y7ta"
+```text
 Тип: A
 Имя: users
 Значение: YOUR_PUBLIC_IP
@@ -56,13 +56,13 @@ TTL: 300
 
 Пример:
 
-```text id="n5h3sq"
+```text
 users.lizup.ru -> 89.110.96.215
 ```
 
 Проверка:
 
-```powershell id="p3e2yt"
+```powershell
 nslookup users.lizup.ru
 ```
 
@@ -72,7 +72,7 @@ nslookup users.lizup.ru
 
 Запустите PowerShell от имени администратора:
 
-```powershell id="j8k1xe"
+```powershell
 New-NetFirewallRule -DisplayName "NGINX HTTP" -Direction Inbound -Protocol TCP -LocalPort 80 -Action Allow
 
 New-NetFirewallRule -DisplayName "NGINX HTTPS" -Direction Inbound -Protocol TCP -LocalPort 443 -Action Allow
@@ -80,7 +80,7 @@ New-NetFirewallRule -DisplayName "NGINX HTTPS" -Direction Inbound -Protocol TCP 
 
 Дополнительно (если нужен прямой доступ к API):
 
-```powershell id="m2d9vr"
+```powershell
 New-NetFirewallRule -DisplayName "Lizerium API" -Direction Inbound -Protocol TCP -LocalPort 52349 -Action Allow
 ```
 
@@ -94,13 +94,13 @@ https://nginx.org/en/download.html
 
 Рекомендуемый путь установки:
 
-```text id="u4t0ab"
+```text
 C:\nginx\
 ```
 
 Структура:
 
-```text id="g5x6rc"
+```text
 C:\nginx\nginx.exe
 C:\nginx\conf\nginx.conf
 C:\nginx\logs\
@@ -108,14 +108,14 @@ C:\nginx\logs\
 
 Запуск:
 
-```powershell id="v6w4jn"
+```powershell
 cd C:\nginx
 .\nginx.exe
 ```
 
 Проверка:
 
-```text id="w0f8xs"
+```text
 http://YOUR_PUBLIC_IP
 ```
 
@@ -129,20 +129,20 @@ https://www.win-acme.com/
 
 Установка:
 
-```text id="r1p7zu"
+```text
 C:\win-acme\
 ```
 
 Запуск:
 
-```powershell id="f3h2ta"
+```powershell
 cd C:\win-acme
 .\wacs.exe
 ```
 
 Выберите сертификат для домена:
 
-```text id="k9x1mq"
+```text
 users.lizup.ru
 ```
 
@@ -150,7 +150,7 @@ users.lizup.ru
 
 Ожидаемые файлы:
 
-```text id="b4u7he"
+```text
 C:\nginx\ssl\users.lizup.ru-chain.pem
 C:\nginx\ssl\users.lizup.ru-key.pem
 ```
@@ -161,13 +161,13 @@ C:\nginx\ssl\users.lizup.ru-key.pem
 
 Откройте:
 
-```text id="x3q6ny"
+```text
 C:\nginx\conf\nginx.conf
 ```
 
 Используйте:
 
-```nginx id="n8m2ru"
+```nginx
 worker_processes 1;
 
 events {
@@ -214,7 +214,7 @@ http {
 
 # Шаг 6 — Перезагрузка NGINX
 
-```powershell id="q2w8eh"
+```powershell
 cd C:\nginx
 .\nginx.exe -s reload
 ```
@@ -225,7 +225,7 @@ cd C:\nginx
 
 Приложение должно слушать только локальный интерфейс:
 
-```csharp id="d7m1kt"
+```csharp
 builder.WebHost.UseUrls("http://127.0.0.1:52349");
 ```
 
@@ -237,7 +237,7 @@ builder.WebHost.UseUrls("http://127.0.0.1:52349");
 
 Откройте:
 
-```text id="t5y9pq"
+```text
 https://users.lizup.ru/users
 ```
 
@@ -255,13 +255,13 @@ https://users.lizup.ru/users
 
 Используйте заголовок:
 
-```text id="h6s4zx"
+```text
 X-Api-Key
 ```
 
 ## Ограничение доступа по IP (NGINX)
 
-```nginx id="e9f2vm"
+```nginx
 location /users {
     allow YOUR_IP;
     deny all;
@@ -289,7 +289,7 @@ location /users {
 
 Открывайте:
 
-```text id="k8v3rp"
+```text
 https://users.lizup.ru/users
 ```
 
@@ -299,7 +299,7 @@ https://users.lizup.ru/users
 
 Проверьте, работает ли приложение на:
 
-```text id="y2u4ec"
+```text
 127.0.0.1:52349
 ```
 
@@ -311,7 +311,7 @@ https://users.lizup.ru/users
 
 Проверьте открытые порты:
 
-```powershell id="p9n1xt"
+```powershell
 netstat -ano | findstr :443
 ```
 

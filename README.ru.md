@@ -58,13 +58,13 @@
 
 ## Быстрый старт
 
-```bash id="x8q3tm"
+```bash
 dotnet build -c Release
 ```
 
 Запуск:
 
-```bash id="z6m1pt"
+```bash
 Lizerium.Restarter.Server.exe
 ```
 
@@ -72,13 +72,13 @@ Lizerium.Restarter.Server.exe
 
 Отредактируйте:
 
-```text id="k2n8va"
+```text
 appsettings.json
 ```
 
 Пример:
 
-```json id="u5v2xh"
+```json
 {
 	"StatsFilePath": "stats.json",
 	"ServerExecutablePath": "flserver.exe",
@@ -98,7 +98,7 @@ appsettings.json
 
 Смена языка:
 
-```json id="f7m0zy"
+```json
 "Language": "En"
 ```
 
