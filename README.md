@@ -25,6 +25,13 @@
 
 ---
 
+> [!NOTE]
+> This project is part of the **Lizerium** ecosystem and belongs to the following project:
+>
+> - [`Lizerium.Software.Structs`](https://github.com/Lizerium/Lizerium.Software.Structs)
+>
+> If you're looking for related engineering and support tools, start there.
+
 ## Features
 
 - Automatic restart if server process stops
