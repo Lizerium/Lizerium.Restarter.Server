@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 09 июня 2026 16:54:02
- * Version: 1.0.51
+ * Last Updated: 10 июня 2026 06:53:00
+ * Version: 1.0.52
  */
 
 using System.Diagnostics;
