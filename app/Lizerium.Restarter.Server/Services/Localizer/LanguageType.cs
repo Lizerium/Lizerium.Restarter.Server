@@ -2,8 +2,8 @@
  * Author: Nikolay Dvurechensky
  * Site: https://dvurechensky.pro/
  * Gmail: dvurechenskysoft@gmail.com
- * Last Updated: 18 июня 2026 06:53:02
- * Version: 1.0.60
+ * Last Updated: 19 июня 2026 06:52:56
+ * Version: 1.0.61
  */
 
 namespace Lizerium.Restarter.Server.Services.Localizer
